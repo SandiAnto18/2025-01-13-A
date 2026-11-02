@@ -18,6 +18,7 @@ class View(ft.UserControl):
         self._title = None
         # first row
         self.dd_localization: ft.Dropdown = None
+
         self.btn_graph: ft.ElevatedButton = None
         self.btn_analizza_grafo: ft.ElevatedButton = None
         self.btn_path: ft.ElevatedButton = None
@@ -32,8 +33,8 @@ class View(ft.UserControl):
 
         # First row with some controls
         self.dd_localization = ft.Dropdown(label="Localization",
-                               hint_text="Selezionare un tipo di localization.", width=300)
-
+                            hint_text="Selezionare un tipo di localization.", width=300)
+        self._controller.fillLocalizations()
         self.btn_graph = ft.ElevatedButton(text="Crea Grafo",
                                            tooltip="Crea il grafo",
                                            on_click=self._controller.handle_graph)
